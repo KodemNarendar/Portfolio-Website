@@ -416,3 +416,24 @@ const bioObserver = new IntersectionObserver((entries) => {
 });
 
 bioObserver.observe(bioText);
+
+
+// Show loading state for projects
+function showProjectsLoading() {
+    document.getElementById('projectsLoading').style.display = 'flex';
+    document.getElementById('projectsContent').style.display = 'none';
+}
+
+// Hide loading and show projects
+function hideProjectsLoading() {
+    document.getElementById('projectsLoading').style.display = 'none';
+    document.getElementById('projectsContent').style.display = 'block';
+}
+
+// Simulate loading time (remove this in production and use real data loading)
+window.addEventListener('load', () => {
+    showProjectsLoading();
+    setTimeout(() => {
+        hideProjectsLoading();
+    }, 2000); // Show loader for 2 seconds
+});
